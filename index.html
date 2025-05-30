@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/teste/assets/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <title>Sol Ateliê de Costura</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="js/cart.js" defer></script>
+  <script src="js/logo-parallax.js" defer></script>
+
+
+</head>
+<body>
+  <header class="hero text-center">
+  <img src="img/sol logo.png" alt="Logo do Sol Ateliê de Costura" class="logo mb-3" />
+  <h1>Ateliê de Costura</h1>
+  <p>Moda infantil, consertos de roupas e costura personalizada</p>
+  <a href="#produtos" class="btn btn-pink mt-3">Ver Produtos</a>
+  </header>
+
+  <div class="container">
+    <section id="sobre">
+      <h2 class="section-title">Sobre Nós</h2>
+      <p>
+        Somos um ateliê artesanal especializado em roupas infantis,
+        consertos e costuras sob medida. Trabalhamos com carinho e atenção aos
+        detalhes para entregar peças únicas e especiais.
+      </p>
+    </section>
+
+    <section id="servicos">
+      <h2 class="section-title">Serviços</h2>
+      <ul>
+        <li>Roupas infantis personalizadas</li>
+        <li>Consertos e ajustes de roupas</li>
+        <li>Peças sob medida</li>
+      </ul>
+    </section>
+
+    <section id="produtos">
+      <h2 class="section-title">Produtos à Venda</h2>
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x200" alt="Vestido Infantil" class="img-fluid mb-2" />
+            <h4>Vestido Florido</h4>
+            <p>R$ 89,90</p>
+            <button class="btn btn-pink add-to-cart" data-id="1" data-name="Vestido Florido" data-price="89.90">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x200" alt="Conjunto Infantil" class="img-fluid mb-2" />
+            <h4>Conjunto Menina</h4>
+            <p>R$ 99,90</p>
+            <button class="btn btn-pink add-to-cart" data-id="2" data-name="Conjunto Menina" data-price="99.90">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200x200" alt="Macacão Infantil" class="img-fluid mb-2" />
+            <h4>Macacão Estampado</h4>
+            <p>R$ 79,90</p>
+            <button class="btn btn-pink add-to-cart" data-id="3" data-name="Macacão Estampado" data-price="79.90">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="mt-5">
+      <h2 class="section-title">Fale Conosco</h2>
+      <p>
+        📍 Rua das Costureiras, 123 – Centro<br />
+        📱 WhatsApp: <a href="https://wa.me/558198634836">55 81 9863-4836</a><br />
+        📸 Instagram: <a href="https://www.instagram.com/solfantasia/" target="_blank">@seuatelie</a>
+      </p>
+    </section>
+  </div>
+
+  <footer class="text-center">
+    <p>&copy; 2025 Sol Ateliê de Costura. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal do Carrinho -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Qtd</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+          </table>
+          <div class="text-end">
+            <strong>Total: R$ <span id="cart-total">0.00</span></strong>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
+          <button class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante para Ver Carrinho -->
+  <button class="btn btn-pink position-fixed bottom-0 end-0 m-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+    🛒 Ver Carrinho
+  </button>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
